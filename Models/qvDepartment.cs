@@ -9,6 +9,10 @@ namespace qvisitorCorporateaspnet.Models
     {
         public int Id { get; set; }
         public int Name { get; set; }
+
         public qvBranch Branch { get; set; }
+        public ICollection<qvHotEntrance> HotEntrances { get; set; }
+
+        public qvDepartment() { }
 }
 }

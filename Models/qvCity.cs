@@ -1,6 +1,7 @@
 ﻿using qvisitorCorp.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,7 +12,10 @@ namespace qvisitorCorporateaspnet.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public qvCountry qvCountries { get; set; }
+        [Column("countryid")]
+        public int CountryID { get; set; }
+        public virtual qvCountry Country { get; set; }
+        public virtual ICollection <qvObject> qvObjects { get; set; }
 
         public qvCity() { }
 }
