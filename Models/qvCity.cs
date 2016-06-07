@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace qvisitorCorporateaspnet.Models
 {
+    [Table ("qvCity")]
     public class qvCity
     {
         public int Id { get; set; }
@@ -15,6 +16,7 @@ namespace qvisitorCorporateaspnet.Models
         [Column("countryid")]
         public int CountryID { get; set; }
         public virtual qvCountry Country { get; set; }
+
         public virtual ICollection <qvObject> qvObjects { get; set; }
 
         public qvCity() { }

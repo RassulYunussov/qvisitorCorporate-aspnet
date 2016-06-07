@@ -12,8 +12,10 @@ namespace qvisitorCorp.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
         public ICollection <qvCity> qvCities { get; set; }
         public ICollection <qvCompany> qvCompanies { get; set; }
+
         public qvCountry()
         {
         }

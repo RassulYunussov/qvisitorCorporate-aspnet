@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace qvisitorCorporateaspnet.Models
 {
+    [Table ("qvHotEntrance")]
     public class qvHotEntrance
     {
         public int Id { get; set; }
@@ -16,6 +18,8 @@ namespace qvisitorCorporateaspnet.Models
         public string Attendant { get; set; }
         public string Comment { get; set; }
 
+        [Column("departmentid")]
+        public int DepartmentId { get; set; }
         public qvDepartment Department { get; set; }
 
     }

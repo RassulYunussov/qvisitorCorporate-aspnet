@@ -5,14 +5,28 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using qvisitorCorp.Models;
-
+using qvisitorCorporateaspnet.Models;
 
 namespace qvisitorCorp.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<qvCountry> Countries { get; set; }
-        
+        public DbSet<qvCity> Cities { get; set; }
+        public DbSet<qvBranch> Branches { get; set; }
+        public DbSet<qvDepartment> Departments { get; set; }
+        public DbSet<qvCheckPoint> CheckPoints { get; set; }
+        public DbSet<qvCompany> Companies { get; set; }
+        public DbSet<qvGender> Genders { get; set; }
+        public DbSet<qvHotEntrance> HotEntrances { get; set; }
+        public DbSet<qvObject> Objects { get; set; }
+        public DbSet<qvOrder> Orders { get; set; }
+        public DbSet<qvOrderComment> OrderComments { get; set; }
+        public DbSet<qvOrderType> OrderTypes { get; set; }
+        public DbSet<qvOrderStatus> OrderStatuses { get; set; }
+        public DbSet<qvVisitor> Visitors { get; set; }
+
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
