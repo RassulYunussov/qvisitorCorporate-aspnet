@@ -12,8 +12,6 @@ namespace qvisitorCorporateaspnet.Models
     {
         public int Id { get; set; }
 
-        public int UserId { get; set; }
-        [ForeignKey("UserId")]
         public virtual ApplicationUser User { get; set; }
 
         public string Comment { get; set; }
