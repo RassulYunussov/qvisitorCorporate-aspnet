@@ -12,10 +12,11 @@ namespace qvisitorCorporateaspnet.Models
         public int Id { get; set; }
         public int Name { get; set; }
 
-        [Column ("branchid")]
-        public qvBranch Branch { get; set; }
+        public int BranchId { get; set; }
+        [ForeignKey("BranchId")]
+        public virtual qvBranch Branch { get; set; }
 
-        public ICollection<qvHotEntrance> HotEntrances { get; set; }
+        public virtual ICollection <qvHotEntrance> HotEntrances { get; set; }
 
         public qvDepartment() { }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using qvisitorCorp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -16,11 +17,19 @@ namespace qvisitorCorporateaspnet.Models
         public string DocumentNumber { get; set; }
         public string Organization { get; set; }
         public string Attendant { get; set; }
-        public string Comment { get; set; }
+        
 
-        [Column("departmentid")]
         public int DepartmentId { get; set; }
-        public qvDepartment Department { get; set; }
+        [ForeignKey("DepartmentId")]
+        public virtual qvDepartment Department { get; set; }
+
+        public int UserId { get; set; }
+        [ForeignKey("UserId")]
+        public virtual ApplicationUser User { get; set; }
+
+        public virtual ICollection <qvHotEntranceDoc> HotEntranceDoc { get; set; }
+
+        public string Comment { get; set; }
 
     }
 }

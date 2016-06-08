@@ -11,18 +11,21 @@ namespace qvisitorCorporateaspnet.Models
     {
         public int Id { get; set; }
 
-        [Column ("ordertypeid")]
         public int OrderTypeid { get; set; }
-        public qvOrderType OrderType { get; set; }
-        [Column("orderstatusid")]
+        [ForeignKey("OrderTypeid")]
+        public virtual qvOrderType OrderType { get; set; }
+
         public int OrderStausid { get; set; }
-        public qvOrderStatus OrderStatus { get; set;}
+        [ForeignKey("OrderStausid")]
+        public virtual qvOrderStatus OrderStatus { get; set;}
 
         public DateTime Sdate { get; set; }
         public DateTime Edate { get; set; }
         public DateTime Opentime { get; set; }
         public DateTime Closetime { get; set; }
 
+        public virtual ICollection <qvVisitorLuggage> VisitorLuggage { get; set; }
+        
         public qvOrder() { }
 
     }

@@ -13,7 +13,7 @@ namespace qvisitorCorporateaspnet.Models
         public string Code { get; set; }
         public string Description { get; set; }
 
-        public ICollection<qvOrder> Order { get; set; }
+        public virtual ICollection<qvOrder> Order { get; set; }
 
         public qvOrderType() { }
     }

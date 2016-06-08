@@ -12,10 +12,11 @@ namespace qvisitorCorporateaspnet.Models
         public int Id { get; set; }
         public string Name{ get; set; }
 
-        [Column("cityid")]
         public int CityId { get; set; }
-        public qvCity City { get; set; }
-        public ICollection<qvCheckPoint> CheckPoints { get; set; }
+        [ForeignKey("CityId")]
+        public virtual qvCity City { get; set; }
+
+        public virtual ICollection<qvCheckPoint> CheckPoints { get; set; }
 
         public qvObject() { }
     }

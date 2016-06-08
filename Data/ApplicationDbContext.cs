@@ -25,6 +25,13 @@ namespace qvisitorCorp.Data
         public DbSet<qvOrderType> OrderTypes { get; set; }
         public DbSet<qvOrderStatus> OrderStatuses { get; set; }
         public DbSet<qvVisitor> Visitors { get; set; }
+        public DbSet<qvVisitiorPhoto> VisitorPhotos { get; set; }
+        public DbSet<qvVisitorDoc> VisitorDocs { get; set; }
+        public DbSet<qvEntranceType> EntranceTypes { get; set; }
+        public DbSet<qvEntranceType> HotEntranceDocs { get; set; }
+        public DbSet<qvVisitorScan> VisitorScan { get; set; }
+        public DbSet<qvVisitorLuggage> VisitorLuggages { get; set; }
+
 
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)

@@ -13,11 +13,11 @@ namespace qvisitorCorporateaspnet.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        [Column("countryid")]
         public int CounryId { get; set; }
-        public qvCountry Country { get; set; }
+        [ForeignKey("CounryId")]
+        public virtual qvCountry Country { get; set; }
 
-        public ICollection<qvCompany> Companies { get; set; }
+        public virtual ICollection<qvCompany> Companies { get; set; }
 
         public qvCompany() { }
     }
