@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace qvisitorCorporateaspnet.Models
 {
@@ -13,6 +10,6 @@ namespace qvisitorCorporateaspnet.Models
         public string Code { get; set; }
         public string Description { get; set; }
 
-        public virtual ICollection<qvEntrance> Entrance { get; set; }
+        public virtual ICollection<qvEntrance> Entrances { get; set; }
     }
 }

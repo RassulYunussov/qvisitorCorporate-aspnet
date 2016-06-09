@@ -1,12 +1,8 @@
-﻿using qvisitorCorporateaspnet.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
-
-namespace qvisitorCorp.Models
+namespace qvisitorCorporateaspnet.Models
 {
     [Table("qvVisitor")]
     public class qvVisitor
@@ -21,13 +17,13 @@ namespace qvisitorCorp.Models
         public virtual qvGender Gender { get; set; }
 
         
-        public virtual ICollection <qvVisitiorPhoto> VisitorPhotos { get; set; }
+        public virtual ICollection <qvVisitiorPhoto> VisitorPhotoes { get; set; }
         public virtual ICollection <qvVisitorDoc> VisitorDocs { get; set; }
         public virtual ICollection <qvVisitorScan> VisitorScans { get; set; }
-        public virtual ICollection <qvVisitorLuggage> VisitorLuggage { get; set; }
-        public virtual ICollection <qvEntrance> Entrance { get; set; }
+        public virtual ICollection <qvVisitorLuggage> VisitorLuggages { get; set; }
+        public virtual ICollection <qvEntrance> Entrances { get; set; }
 
-        public virtual ICollection <qvOrder> Order { get; set; }
+        public virtual ICollection <refOrderVisitor> RefOrderVisitors { get; set; }
 
         public DateTime birthdate { get; set; }
 

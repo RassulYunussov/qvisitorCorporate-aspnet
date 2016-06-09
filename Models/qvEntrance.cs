@@ -1,9 +1,8 @@
-﻿using qvisitorCorp.Models;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace qvisitorCorporateaspnet.Models
 {
@@ -29,9 +28,8 @@ namespace qvisitorCorporateaspnet.Models
         public int VisitorId { get; set; }
         [ForeignKey("VisitorId")]
         public qvVisitor Visitor { get; set; }
-
-        public ICollection<qvEntrancePhoto> EntrancePhoto { get; set; }
-        public ICollection<qvEntranceDoc> EntranceDoc { get; set; }
+        public ICollection<qvEntrancePhoto> EntrancePhotoes { get; set; }
+        public ICollection<qvEntranceDoc> EntranceDocs { get; set; }
 
     }
 }

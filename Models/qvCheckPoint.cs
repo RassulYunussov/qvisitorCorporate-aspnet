@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace qvisitorCorporateaspnet.Models
 {
@@ -16,7 +13,7 @@ namespace qvisitorCorporateaspnet.Models
         [ForeignKey("ObjectId")]
         public virtual qvObject Object { get; set; }
 
-        public virtual ICollection<qvEntrance> Entrance { get; set; }
-        public virtual ICollection<qvNotRecognizedDoc> NotRecognizedDoc { get; set; }
+        public virtual ICollection<qvEntrance> Entrances { get; set; }
+        public virtual ICollection<qvNotRecognizedDoc> NotRecognizedDocs { get; set; }
     }
 }

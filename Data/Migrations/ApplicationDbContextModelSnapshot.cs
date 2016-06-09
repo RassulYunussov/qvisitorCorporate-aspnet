@@ -170,54 +170,6 @@ namespace qvisitorCorp.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("qvisitorCorp.Models.qvCountry", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("qvCountry");
-                });
-
-            modelBuilder.Entity("qvisitorCorp.Models.qvGender", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Code");
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("qvGender");
-                });
-
-            modelBuilder.Entity("qvisitorCorp.Models.qvVisitor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("GenderId");
-
-                    b.Property<DateTime>("birthdate");
-
-                    b.Property<string>("name");
-
-                    b.Property<string>("patronymic");
-
-                    b.Property<string>("surname");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("GenderId");
-
-                    b.ToTable("qvVisitor");
-                });
-
             modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvBranch", b =>
                 {
                     b.Property<int>("Id")
@@ -294,6 +246,18 @@ namespace qvisitorCorp.Data.Migrations
                     b.ToTable("qvCompany");
                 });
 
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvCountry", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("qvCountry");
+                });
+
             modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvDepartment", b =>
                 {
                     b.Property<int>("Id")
@@ -310,6 +274,66 @@ namespace qvisitorCorp.Data.Migrations
                     b.ToTable("qvDepartment");
                 });
 
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvEntrance", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("ActionDate");
+
+                    b.Property<int>("CheckPointId");
+
+                    b.Property<int>("EntranceTypeId");
+
+                    b.Property<int>("OrderId");
+
+                    b.Property<int>("VisitorId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CheckPointId");
+
+                    b.HasIndex("EntranceTypeId");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("VisitorId");
+
+                    b.ToTable("qvEntrance");
+                });
+
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvEntranceDoc", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("EntranceId");
+
+                    b.Property<byte[]>("Scan");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntranceId");
+
+                    b.ToTable("qvEntranceDoc");
+                });
+
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvEntrancePhoto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("EntranceId");
+
+                    b.Property<byte[]>("Photo");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntranceId");
+
+                    b.ToTable("qvEntrancePhoto");
+                });
+
             modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvEntranceType", b =>
                 {
                     b.Property<int>("Id")
@@ -322,6 +346,20 @@ namespace qvisitorCorp.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("qvEntranceType");
+                });
+
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvGender", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("qvGender");
                 });
 
             modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvHotEntrance", b =>
@@ -372,6 +410,38 @@ namespace qvisitorCorp.Data.Migrations
                     b.ToTable("qvHotEntranceDoc");
                 });
 
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvHotEntrancePhoto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("HotEntranceId");
+
+                    b.Property<byte[]>("Photo");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HotEntranceId");
+
+                    b.ToTable("HotEntrancePhoto");
+                });
+
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvNotRecognizedDoc", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("CheckPointId");
+
+                    b.Property<byte[]>("Scan");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CheckPointId");
+
+                    b.ToTable("qvNotRecognizedDoc");
+                });
+
             modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvObject", b =>
                 {
                     b.Property<int>("Id")
@@ -393,17 +463,17 @@ namespace qvisitorCorp.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("Closetime");
+                    b.Property<DateTime>("CloseTime");
 
-                    b.Property<DateTime>("Edate");
+                    b.Property<DateTime>("EndDate");
 
-                    b.Property<DateTime>("Opentime");
+                    b.Property<DateTime>("OpenTime");
 
                     b.Property<int>("OrderStausid");
 
                     b.Property<int>("OrderTypeid");
 
-                    b.Property<DateTime>("Sdate");
+                    b.Property<DateTime>("StartDate");
 
                     b.HasKey("Id");
 
@@ -446,6 +516,30 @@ namespace qvisitorCorp.Data.Migrations
                     b.ToTable("qvOrderStatus");
                 });
 
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvOrderStatusHistory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("ActionDate");
+
+                    b.Property<int>("NewStatusId");
+
+                    b.Property<int>("OldStatusId");
+
+                    b.Property<int>("OrderId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NewStatusId");
+
+                    b.HasIndex("OldStatusId");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("qvOrderStatusHistory");
+                });
+
             modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvOrderType", b =>
                 {
                     b.Property<int>("Id")
@@ -458,6 +552,42 @@ namespace qvisitorCorp.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("qvOrderType");
+                });
+
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvUserPassport", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("Birthdate");
+
+                    b.Property<int>("GenderId");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Patronymic");
+
+                    b.Property<string>("Surname");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GenderId");
+
+                    b.ToTable("qvUserPassport");
+                });
+
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvUserPhoto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<byte[]>("Photo");
+
+                    b.Property<DateTime>("PhotoDate");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("qvUserPhoto");
                 });
 
             modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvVisitiorPhoto", b =>
@@ -476,6 +606,28 @@ namespace qvisitorCorp.Data.Migrations
                     b.HasIndex("VisitorId");
 
                     b.ToTable("qvVisitorPhoto");
+                });
+
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvVisitor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("GenderId");
+
+                    b.Property<DateTime>("birthdate");
+
+                    b.Property<string>("name");
+
+                    b.Property<string>("patronymic");
+
+                    b.Property<string>("surname");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GenderId");
+
+                    b.ToTable("qvVisitor");
                 });
 
             modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvVisitorDoc", b =>
@@ -538,6 +690,21 @@ namespace qvisitorCorp.Data.Migrations
                     b.ToTable("qvVisitorScan");
                 });
 
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.refOrderVisitor", b =>
+                {
+                    b.Property<int>("VisitorId");
+
+                    b.Property<int>("OrderId");
+
+                    b.HasKey("VisitorId", "OrderId");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("VisitorId");
+
+                    b.ToTable("refOrderVisitor");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole")
@@ -575,14 +742,6 @@ namespace qvisitorCorp.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("qvisitorCorp.Models.qvVisitor", b =>
-                {
-                    b.HasOne("qvisitorCorp.Models.qvGender")
-                        .WithMany()
-                        .HasForeignKey("GenderId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
             modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvBranch", b =>
                 {
                     b.HasOne("qvisitorCorporateaspnet.Models.qvCity")
@@ -611,7 +770,7 @@ namespace qvisitorCorp.Data.Migrations
 
             modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvCity", b =>
                 {
-                    b.HasOne("qvisitorCorp.Models.qvCountry")
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvCountry")
                         .WithMany()
                         .HasForeignKey("CountryID")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -619,7 +778,7 @@ namespace qvisitorCorp.Data.Migrations
 
             modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvCompany", b =>
                 {
-                    b.HasOne("qvisitorCorp.Models.qvCountry")
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvCountry")
                         .WithMany()
                         .HasForeignKey("CounryId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -634,6 +793,45 @@ namespace qvisitorCorp.Data.Migrations
                     b.HasOne("qvisitorCorporateaspnet.Models.qvBranch")
                         .WithMany()
                         .HasForeignKey("BranchId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvEntrance", b =>
+                {
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvCheckPoint")
+                        .WithMany()
+                        .HasForeignKey("CheckPointId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvEntranceType")
+                        .WithMany()
+                        .HasForeignKey("EntranceTypeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvOrder")
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvVisitor")
+                        .WithMany()
+                        .HasForeignKey("VisitorId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvEntranceDoc", b =>
+                {
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvEntrance")
+                        .WithMany()
+                        .HasForeignKey("EntranceId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvEntrancePhoto", b =>
+                {
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvEntrance")
+                        .WithMany()
+                        .HasForeignKey("EntranceId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -654,6 +852,22 @@ namespace qvisitorCorp.Data.Migrations
                     b.HasOne("qvisitorCorporateaspnet.Models.qvHotEntrance")
                         .WithMany()
                         .HasForeignKey("HotEntranceId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvHotEntrancePhoto", b =>
+                {
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvHotEntrance")
+                        .WithMany()
+                        .HasForeignKey("HotEntranceId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvNotRecognizedDoc", b =>
+                {
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvCheckPoint")
+                        .WithMany()
+                        .HasForeignKey("CheckPointId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -685,17 +899,51 @@ namespace qvisitorCorp.Data.Migrations
                         .HasForeignKey("UserId");
                 });
 
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvOrderStatusHistory", b =>
+                {
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvOrderStatus")
+                        .WithMany()
+                        .HasForeignKey("NewStatusId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvOrderStatus")
+                        .WithMany()
+                        .HasForeignKey("OldStatusId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvOrder")
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvUserPassport", b =>
+                {
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvGender")
+                        .WithMany()
+                        .HasForeignKey("GenderId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvVisitiorPhoto", b =>
                 {
-                    b.HasOne("qvisitorCorp.Models.qvVisitor")
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvVisitor")
                         .WithMany()
                         .HasForeignKey("VisitorId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvVisitor", b =>
+                {
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvGender")
+                        .WithMany()
+                        .HasForeignKey("GenderId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvVisitorDoc", b =>
                 {
-                    b.HasOne("qvisitorCorp.Models.qvVisitor")
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvVisitor")
                         .WithMany()
                         .HasForeignKey("VisitorId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -708,7 +956,7 @@ namespace qvisitorCorp.Data.Migrations
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("qvisitorCorp.Models.qvVisitor")
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvVisitor")
                         .WithMany()
                         .HasForeignKey("VisitorId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -716,7 +964,20 @@ namespace qvisitorCorp.Data.Migrations
 
             modelBuilder.Entity("qvisitorCorporateaspnet.Models.qvVisitorScan", b =>
                 {
-                    b.HasOne("qvisitorCorp.Models.qvVisitor")
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvVisitor")
+                        .WithMany()
+                        .HasForeignKey("VisitorId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("qvisitorCorporateaspnet.Models.refOrderVisitor", b =>
+                {
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvOrder")
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("qvisitorCorporateaspnet.Models.qvVisitor")
                         .WithMany()
                         .HasForeignKey("VisitorId")
                         .OnDelete(DeleteBehavior.Cascade);

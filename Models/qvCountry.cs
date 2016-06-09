@@ -1,11 +1,8 @@
-using qvisitorCorporateaspnet.Models;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace qvisitorCorp.Models
+
+namespace qvisitorCorporateaspnet.Models
 {
     [Table("qvCountry")]
     public class qvCountry
@@ -13,8 +10,8 @@ namespace qvisitorCorp.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public virtual ICollection <qvCity> qvCities { get; set; }
-        public virtual ICollection <qvCompany> qvCompanies { get; set; }
+        public virtual ICollection <qvCity> Cities { get; set; }
+        public virtual ICollection <qvCompany> Companies { get; set; }
 
         public qvCountry()
         {

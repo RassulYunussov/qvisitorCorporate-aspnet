@@ -1,9 +1,6 @@
 ﻿using qvisitorCorp.Models;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace qvisitorCorporateaspnet.Models
 {
@@ -25,8 +22,8 @@ namespace qvisitorCorporateaspnet.Models
 
         public virtual ApplicationUser User { get; set; }
 
-        public virtual ICollection <qvHotEntranceDoc> HotEntranceDoc { get; set; }
-        public virtual ICollection <qvHotEntrancePhoto> HotEntrancePhoto { get; set; }
+        public virtual ICollection <qvHotEntranceDoc> HotEntranceDocs { get; set; }
+        public virtual ICollection <qvHotEntrancePhoto> HotEntrancePhotoes { get; set; }
 
         public string Comment { get; set; }
 

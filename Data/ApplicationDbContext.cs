@@ -52,6 +52,19 @@ namespace qvisitorCorp.Data
             // Customize the ASP.NET Identity model and override the defaults if needed.
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
+            
+            builder.Entity<refOrderVisitor>()
+                .HasKey(ov => new { ov.VisitorId, ov.OrderId });
+                
+            builder.Entity<refOrderVisitor>()
+                .HasOne(ov => ov.Order)
+                .WithMany(o => o.RefOrderVisitors)
+                .HasForeignKey(ov => ov.OrderId);
+
+            builder.Entity<refOrderVisitor>()
+                .HasOne(ov => ov.Visitor)
+                .WithMany(v => v.RefOrderVisitors)
+                .HasForeignKey(ov => ov.VisitorId);
         }
     }
 }

@@ -1,9 +1,7 @@
-﻿using qvisitorCorp.Models;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace qvisitorCorporateaspnet.Models
 {
@@ -20,15 +18,15 @@ namespace qvisitorCorporateaspnet.Models
         [ForeignKey("OrderStausid")]
         public virtual qvOrderStatus OrderStatus { get; set;}
 
-        public DateTime Sdate { get; set; }
-        public DateTime Edate { get; set; }
-        public DateTime Opentime { get; set; }
-        public DateTime Closetime { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public DateTime OpenTime { get; set; }
+        public DateTime CloseTime { get; set; }
 
-        public virtual ICollection <qvVisitorLuggage> VisitorLuggage { get; set; }
-        public virtual ICollection <qvEntrance> Entrance { get; set; }
-        public virtual ICollection <qvOrderStatusHistory> OrderStatusHistory { get; set; }
-        public virtual ICollection <qvVisitor> Visitor { get; set; }
+        public virtual ICollection <qvVisitorLuggage> VisitorLuggages { get; set; }
+        public virtual ICollection <qvEntrance> Entrances { get; set; }
+        public virtual ICollection <qvOrderStatusHistory> OrderStatusHistories { get; set; }
+        public virtual ICollection <refOrderVisitor> RefOrderVisitors { get; set; }
 
         public qvOrder() { }
 

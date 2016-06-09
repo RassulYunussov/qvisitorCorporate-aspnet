@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace qvisitorCorporateaspnet.Models
 { 
@@ -18,6 +15,11 @@ namespace qvisitorCorporateaspnet.Models
         public int OldStatusId { get; set; }
         public int NewStatusId { get; set; }
 
+        [ForeignKey("OldStatusId")]
+        public virtual qvOrderStatus OldStatus {get;set;}
+        
+        [ForeignKey("NewStatusId")]
+        public virtual qvOrderStatus NewStatus {get;set;}
         public DateTime ActionDate { get; set; }
     }
 }
