@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace qvisitorCorporateaspnet.Models
+namespace qvisitorCorp.Models
 {
     [Table ("refOrderVisitor")]
     public class refOrderVisitor

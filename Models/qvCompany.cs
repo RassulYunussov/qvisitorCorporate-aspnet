@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace qvisitorCorporateaspnet.Models
+namespace qvisitorCorp.Models
 {
     [Table ("qvCompany")]
     public class qvCompany

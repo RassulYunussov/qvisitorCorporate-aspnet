@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using qvisitorCorp.Models;
-using qvisitorCorporateaspnet.Models;
 
 namespace qvisitorCorp.Data
 {

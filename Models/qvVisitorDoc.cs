@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace qvisitorCorporateaspnet.Models
+namespace qvisitorCorp.Models
 {
     [Table ("qvVisitorDoc")]
     public class qvVisitorDoc

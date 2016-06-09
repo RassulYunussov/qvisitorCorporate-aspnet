@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace qvisitorCorporateaspnet.Models
+namespace qvisitorCorp.Models
 {
     [Table ("qvOrder")]
     public class qvOrder

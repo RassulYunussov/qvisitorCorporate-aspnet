@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace qvisitorCorporateaspnet.Models
+namespace qvisitorCorp.Models
 {
     [Table ("qvBranch")]
     public class qvBranch

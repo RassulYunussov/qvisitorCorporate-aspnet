@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using qvisitorCorp.Data;
-using qvisitorCorporateaspnet.Models;
+using qvisitorCorp.Models;
 
-namespace qvisitorCorporateaspnet.Controllers
+namespace qvisitorCorp.Controllers
 {
     public class qvCountriesController : Controller
     {
