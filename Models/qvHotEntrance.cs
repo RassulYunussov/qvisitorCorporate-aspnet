@@ -26,6 +26,7 @@ namespace qvisitorCorporateaspnet.Models
         public virtual ApplicationUser User { get; set; }
 
         public virtual ICollection <qvHotEntranceDoc> HotEntranceDoc { get; set; }
+        public virtual ICollection <qvHotEntrancePhoto> HotEntrancePhoto { get; set; }
 
         public string Comment { get; set; }
 

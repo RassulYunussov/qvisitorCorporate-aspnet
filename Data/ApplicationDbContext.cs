@@ -31,7 +31,14 @@ namespace qvisitorCorp.Data
         public DbSet<qvEntranceType> HotEntranceDocs { get; set; }
         public DbSet<qvVisitorScan> VisitorScan { get; set; }
         public DbSet<qvVisitorLuggage> VisitorLuggages { get; set; }
-
+        public DbSet<qvHotEntrancePhoto> HotEntrancePhotos { get; set; }
+        public DbSet<qvEntrance> Entrances { get; set; }
+        public DbSet<qvNotRecognizedDoc> NotRecognizedDocs { get; set; }
+        public DbSet<qvEntrancePhoto> EntrancePhotos { get; set; }
+        public DbSet<qvEntranceDoc> EntranceDocs { get; set; }
+        public DbSet<qvOrderStatusHistory> OrderStatusHistories { get; set; }
+        public DbSet<qvUserPhoto> UserPhotos { get; set; }
+        public DbSet<qvUserPassport> qvUserPassports { get; set; }
 
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -48,3 +55,4 @@ namespace qvisitorCorp.Data
         }
     }
 }
+

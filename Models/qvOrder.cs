@@ -1,4 +1,5 @@
-﻿using System;
+﻿using qvisitorCorp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -25,7 +26,10 @@ namespace qvisitorCorporateaspnet.Models
         public DateTime Closetime { get; set; }
 
         public virtual ICollection <qvVisitorLuggage> VisitorLuggage { get; set; }
-        
+        public virtual ICollection <qvEntrance> Entrance { get; set; }
+        public virtual ICollection <qvOrderStatusHistory> OrderStatusHistory { get; set; }
+        public virtual ICollection <qvVisitor> Visitor { get; set; }
+
         public qvOrder() { }
 
     }

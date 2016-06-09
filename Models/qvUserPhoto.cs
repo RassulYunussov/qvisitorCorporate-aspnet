@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace qvisitorCorporateaspnet.Models
 {
-    [Table ("qvEntranceType")]
-    public class qvEntranceType
+    [Table ("qvUserPhoto")]
+    public class qvUserPhoto
     {
         public int Id { get; set; }
-        public string Code { get; set; }
-        public string Description { get; set; }
+        public byte[] Photo { get; set; }
+        public DateTime PhotoDate { get; set; }
 
-        public virtual ICollection<qvEntrance> Entrance { get; set; }
     }
 }

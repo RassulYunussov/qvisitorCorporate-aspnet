@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace qvisitorCorporateaspnet.Models
 {
-    [Table ("qvEntranceType")]
-    public class qvEntranceType
+    [Table ("qvNotRecognizedDoc")]
+    public class qvNotRecognizedDoc
     {
         public int Id { get; set; }
-        public string Code { get; set; }
-        public string Description { get; set; }
+        public byte[] Scan{ get; set; }
 
-        public virtual ICollection<qvEntrance> Entrance { get; set; }
+        public int CheckPointId { get; set; }
+        [ForeignKey("CheckPointId")]
+        public qvCheckPoint CheckPoint { get; set; }
     }
 }

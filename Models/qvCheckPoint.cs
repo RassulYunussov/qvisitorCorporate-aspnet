@@ -15,5 +15,8 @@ namespace qvisitorCorporateaspnet.Models
         public int ObjectId { get; set; }
         [ForeignKey("ObjectId")]
         public virtual qvObject Object { get; set; }
+
+        public virtual ICollection<qvEntrance> Entrance { get; set; }
+        public virtual ICollection<qvNotRecognizedDoc> NotRecognizedDoc { get; set; }
     }
 }

@@ -25,6 +25,9 @@ namespace qvisitorCorp.Models
         public virtual ICollection <qvVisitorDoc> VisitorDocs { get; set; }
         public virtual ICollection <qvVisitorScan> VisitorScans { get; set; }
         public virtual ICollection <qvVisitorLuggage> VisitorLuggage { get; set; }
+        public virtual ICollection <qvEntrance> Entrance { get; set; }
+
+        public virtual ICollection <qvOrder> Order { get; set; }
 
         public DateTime birthdate { get; set; }
 
