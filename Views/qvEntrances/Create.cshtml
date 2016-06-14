@@ -1,0 +1,59 @@
+@model qvisitorCorp.Models.qvEntrance
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>qvEntrance</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="ActionDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ActionDate" class="form-control" />
+                <span asp-validation-for="ActionDate" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CheckPointId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="CheckPointId" class ="form-control" asp-items="ViewBag.CheckPointId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EntranceTypeId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="EntranceTypeId" class ="form-control" asp-items="ViewBag.EntranceTypeId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="OrderId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="OrderId" class ="form-control" asp-items="ViewBag.OrderId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="VisitorId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="VisitorId" class ="form-control" asp-items="ViewBag.VisitorId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

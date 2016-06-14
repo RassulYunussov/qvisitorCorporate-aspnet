@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -65,6 +65,8 @@ namespace qvisitorCorp.Data
                 .WithMany(v => v.RefOrderVisitors)
                 .HasForeignKey(ov => ov.VisitorId);
         }
+
+        public DbSet<qvHotEntranceDoc> qvHotEntranceDoc { get; set; }
     }
 }
 
