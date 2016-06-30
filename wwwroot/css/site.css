@@ -1,3 +1,92 @@
+@font-face
+{
+   font-family:KB Year;
+   src:url('../Fonts/KB Year.ttf');
+}
+
+@font-face
+{
+   font-family:a_Empirial;
+   src:url('../Fonts/a_Empirial.ttf');
+}
+
+@font-face
+{
+   font-family:KB Zero;
+   src:url('../Fonts/KB Zero.ttf');
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes warning {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: white;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+/* Standard syntax */
+@keyframes warning {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: white;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+.warning-animation{
+    color: red;
+    -webkit-animation-name: warning; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 3s; /* Chrome, Safari, Opera */
+    animation-name: warning;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    font-family:'KB Year',sans-serif;
+}
+
+.corp-label
+{
+    font-family:'a_Empirial',sans-serif;
+    font-size:4em;
+}
+
+.tech-header
+{
+    font-family:'KB Year',sans-serif;
+}
+
+.tech-menu
+{
+    font-size:16px;
+    padding-top:7px;
+}
+a:active{
+    
+}
+
+.my-href>a:active {
+    background-color:#333333; color:#999999;
+}
+.my-href>a:hover{
+    background-color:black;
+    color:white;
+}
+.my-href>a:visited{
+    background-color:#333333; color:#999999;
+}
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;

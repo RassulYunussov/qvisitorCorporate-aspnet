@@ -1,0 +1,117 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+    ViewData["Title"] = "SelectCompany";
+}
+
+<div class="navbar navbar-right" style="z-index: 1000; width:250px; margin-left:20px;  margin-top: 70px; position:absolute;">
+    <div class="glyphicon glyphicon-menu-hamburger" style="width:250px; color:white; padding-top:15px; padding-left:15px;
+                background-color:#436ccf; height:50px; border-top-left-radius:10px; border-top-right-radius:10px; font-size:20px;">
+        <abbr style="font-family:Tahoma; font-size:20px; color:white;"> Меню </abbr>
+    </div>
+    <div class="navbar-inverse" style="height:250px; width:250px; position:absolute;">
+        <ul class="nav navbar-nav side-nav" style="width:250px;">
+            <li>
+                <a asp-controller="Admin" asp-action="Company" style="font-family:Tahoma; font-size:20px; width:250px; padding-left:20px;"> Компании </a>
+            </li>
+            <li>
+                <a asp-controller="Admin" asp-action="Cabinet" style="font-family:Tahoma; font-size:20px; width:250px; padding-left:20px;"> Кабинет</a>
+            </li>
+            <li>
+                <a asp-controller="CheckPoint" asp-action="Visitors" style="font-family:Tahoma; font-size:20px; width:250px; padding-left:20px;"> Посетители</a>
+            </li>
+            <li>
+                <a asp-controller="Cabinet" asp-action="Request" style="font-family:Tahoma; font-size:20px; width:250px; padding-left:20px;"> Заявки</a>
+            </li>
+            <li>
+                <a asp-controller="CheckPoint" asp-action="KPP" style="font-family:Tahoma; font-size:20px; width:250px; padding-left:20px;"> КПП</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div style="position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1000px;
+  background-color:black;
+  background-image:url(/images/fon_tech.png);
+  background-repeat:round;">
+
+    <div style="position:fixed;
+  top: 100px;
+  left: 300px;
+  width: 100%;
+  height: 90%;
+  background-color:white;
+  padding:30px;
+  overflow: scroll;">
+
+        <h1 style="padding-left:30px;" class="page-header"> Список объектов </h1>
+        <ol class="breadcrumb">
+            <li>
+                <a asp-controller="Admin" asp-action="Company"> Компании</a>
+            </li>
+            <li class="active">
+                Просмотр
+            </li>
+        </ol>
+        
+        <div style="border-style:groove; border-width: 3px; width: 78%; margin-top:20px;">
+            <div style="background:linear-gradient(to top,#c8b9b9,#efd7d7); height:40px; width:100%; top:30px; font-size: 20px; padding-top:7px; padding-left: 15px;">
+                <i class="glyphicon glyphicon-file"></i>
+                Информация о компании
+            </div>
+            <div style="margin:20px;">
+                <h2>АО"Сбербак России"</h2>
+                <h3 style="margin:20px; margin-left:0;" class="help-block"> Дочерний банк Сбербанк России</h3>
+            </div>
+            </div>
+
+            <div style="border-style:groove; border-width: 3px; width: 78%; margin-top:20px;">
+                <div style="background:linear-gradient(to top,#c8b9b9,#efd7d7); height:40px; width:100%; top:30px; font-size: 20px; padding-top:7px; padding-left: 15px;">
+                    <i class="glyphicon glyphicon-list-alt"></i>
+                    Список компаний
+                </div>
+                <p style="margin-top: 20px; margin-left: 10px; margin-bottom:0;">
+                    Всего: 1 записей.
+                </p>
+                <a style="color:#333;" asp-controller="Admin" asp-action="CreateObject">
+                    <div align="right" style="margin-right:20px; margin-top:0; margin-bottom:5px;">
+                        <button class="btn" style="margin-right:0;"><i class="glyphicon glyphicon-plus"></i>Создать</button>
+                    </div>
+                </a>
+                <table class="table table-bordered table-hover">
+                    <thead style="background-color:#333; color:#9d9d9d;">
+                        <tr>
+                            <th style="text-align:center;">#</th>
+                            <th style="text-align:center;">НАИМЕНОВАНИЕ</th>
+                            <th style="text-align:center;">ОПИСАНИЕ</th>
+                            <th style="text-align:center;">СТАТУС</th>
+                            <th style="text-align:center;">ДЕЙСТВИЯ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Легур</td>
+                            <td>Здание Легур</td>
+                            <td><i class="glyphicon glyphicon-ok" style="color:forestgreen; font-size:20px;"></i></td>
+                            <td>
+                                <a style="color:#333;" asp-controller="Admin" asp-action="SelectObject">
+                                    <button class="btn">Просмотр</button>
+                                </a>
+                                <a style="color:#333;" asp-controller="Admin" asp-action="UpdateObject">
+                                    <button class="btn">Редактирование</button>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>
+
+
