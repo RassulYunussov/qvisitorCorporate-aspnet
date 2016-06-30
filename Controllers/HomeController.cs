@@ -8,6 +8,7 @@ namespace qvisitorCorp.Controllers
 {
     public class HomeController : Controller
     {
+        
         public IActionResult Index()
         {
             return View();
