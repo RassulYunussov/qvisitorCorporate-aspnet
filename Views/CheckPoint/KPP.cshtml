@@ -36,9 +36,7 @@
   left: 0;
   width: 100%;
   height: 1000px;
-  background-color:black;
-  background-image:url(/images/fon_tech.png);
-  background-repeat:round;">
+  background-color:white;">
 
     <div style="position:fixed;
   top: 100px;
@@ -46,7 +44,6 @@
   width: 100%;
   height: 90%;
   background-color:white;
-  padding:30px;
   overflow: scroll;">
 
         <h1 style="padding-left:30px;" class="page-header"> Доступ к объекту </h1>
@@ -65,58 +62,61 @@
             </button>
         </form>
 
-        <div style="border-style:groove; border-width: 3px; width: 78%; margin-top:20px;">
-            <div style="background:linear-gradient(to top,#c8b9b9,#efd7d7); height:40px; width:100%; top:30px; font-size: 20px; padding-top:7px; padding-left: 15px;">
+        <div class="panel panel-default" style="border-style:groove; border-width: 3px; width: 78%; margin-top:20px;">
+            <div class="panel-heading" style="height:40px; width:100%; top:30px; font-size: 20px; padding-top:7px; padding-left: 15px;">
                 <i class="glyphicon glyphicon-list-alt"></i>
                 Список пропусков
             </div>
-            <p style="margin-top: 20px; margin-left: 10px; margin-bottom:0;">
-                Всего: 1 записей.
-            </p>
-            <a style="color:#333;" asp-controller="CheckPoint" asp-action="CreateKPP">
-                <div align="right" style="margin-right:20px; margin-top:0; margin-bottom:5px;">
-                    <button class="btn btn-primary" style="margin-right:0;"><i class="glyphicon glyphicon-plus"></i>Зарегистрировать вход</button>
-                </div>
-            </a>
-            <table class="table table-bordered table-hover">
-                <thead style="background-color:#333; color:#9d9d9d;">
-                    <tr>
-                        <th style="text-align:center;">#</th>
-                        <th style="text-align:center;">ФИО</th>
-                        <th style="text-align:center;">СОПРОВОЖДАЮЩИЙ</th>
-                        <th style="text-align:center;">ПРОПУСК</th>
-                        <th style="text-align:center;">ДЕЙСТВИЯ</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>
-                            <div style="width:300px; padding-left:5px; height:50px;">
-                                <span class="badge" style="float:left; background-color:limegreen;">14:09:33</span>
-                                <abbr style="padding-left:5px;">Пупкин Василий Сергеевич</abbr>
-                            </div>
-                        </td>
-                        <td>Нурмухамед Азиз</td>
-                        <td><img style="height:17px; margin-right: 3px;" src="~/images/glyphicons_044_keys.png"/>Нурмухамед Азиз</td>
-                        <td>
-                            <a style="color:#333;" asp-controller="CheckPoint" asp-action="SelectKPP">
-                                <button class="btn">Просмотр</button>
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="panel-heading">
+                <p style="margin-top: 20px; margin-left: 10px; margin-bottom:0;">
+                    Всего: 1 записей.
+                </p>
+                <a style="color:#333;" asp-controller="CheckPoint" asp-action="CreateKPP">
+                    <div align="right" style="margin-right:20px; margin-top:0; margin-bottom:5px;">
+                        <button class="btn btn-primary" style="margin-right:0;"><i class="glyphicon glyphicon-plus"></i>Зарегистрировать вход</button>
+                    </div>
+                </a>
+                <table class="table table-bordered table-hover">
+                    <thead style="background-color:#333; color:#9d9d9d;">
+                        <tr>
+                            <th style="text-align:center;">#</th>
+                            <th style="text-align:center;">ФИО</th>
+                            <th style="text-align:center;">СОПРОВОЖДАЮЩИЙ</th>
+                            <th style="text-align:center;">ПРОПУСК</th>
+                            <th style="text-align:center;">ДЕЙСТВИЯ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <div style="width:300px; padding-left:5px; height:50px;">
+                                    <span class="badge" style="float:left; background-color:limegreen;">14:09:33</span>
+                                    <abbr style="padding-left:5px;">Пупкин Василий Сергеевич</abbr>
+                                </div>
+                            </td>
+                            <td>Нурмухамед Азиз</td>
+                            <td><img style="height:17px; margin-right: 3px;" src="~/images/glyphicons_044_keys.png" />Нурмухамед Азиз</td>
+                            <td>
+                                <a style="color:#333;" asp-controller="CheckPoint" asp-action="SelectKPP">
+                                    <button class="btn">Просмотр</button>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-            <div>
-                <ul class="pagination">
-                    <li><a href="#"><i class="glyphicon glyphicon-chevron-left"></i>&#160;</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#"><i class="glyphicon glyphicon-chevron-right"> </i>&#160;</a></li>
-                </ul>
+                <div>
+                    <ul class="pagination">
+                        <li><a href="#"><i class="glyphicon glyphicon-chevron-left"></i>&#160;</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-chevron-right"> </i>&#160;</a></li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </div>

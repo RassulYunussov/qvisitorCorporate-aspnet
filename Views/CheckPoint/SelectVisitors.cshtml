@@ -37,9 +37,7 @@
   left: 0;
   width: 100%;
   height: 1000px;
-  background-color:black;
-  background-image:url(/images/fon_tech.png);
-  background-repeat:round;">
+  background-color:white;">
 
     <div style="position:fixed;
   top: 100px;
@@ -47,10 +45,9 @@
   width: 100%;
   height: 90%;
   background-color:white;
-  padding:30px;
   overflow: scroll;">
 
-        <h1 style="padding-left:30px;" class="page-header"> Список объектов </h1>
+        <h1 style="padding-left:30px;" class="page-header"> Информация о посетителе </h1>
         <ol class="breadcrumb">
             <li>
                 <a asp-controller="CheckPoint" asp-action="Visitors">Посетители</a>
@@ -60,145 +57,148 @@
             </li>
         </ol>
 
-        <div style="border-style:groove; border-width: 3px; width: 78%; margin-top:20px;">
-            <div style="background:linear-gradient(to top,#c8b9b9,#efd7d7); height:40px; width:100%; top:30px; font-size: 20px; padding-top:7px; padding-left: 15px;">
+        <div class="panel panel-default" style="border-style:groove; border-width: 3px; width: 78%; margin-top:20px;">
+            <div class="panel-heading" style="height:40px; width:100%; top:30px; font-size: 20px; padding-top:7px; padding-left: 15px;">
                 <i class="glyphicon glyphicon-file"></i>
                 Информация о посетителе
             </div>
-            <div class="table-responsive">
-                <table class="table table-hover">
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <th rowspan="11" style="padding:0; width: 100px;">
+                                    <div class="col-lg-6">
+                                        <img style="height:240px;" src="~/images/fotografiya-9-na-122.jpg" />
+                                    </div>
+                                </th>
+                                <th colspan="2">
+                                    <h1>Пупкин Василий Сергеевич</h1>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Дата рождения
+                                </th>
+                                <th>
+                                    12.10.1984
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Национальность
+                                </th>
+                                <th>
+                                    Русский
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Пол
+                                </th>
+                                <th>
+                                    Мужской
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Место рождения
+                                </th>
+                                <th>
+                                    Казахстан, Алматы
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th colspan="2">
+                                    <h1 style="margin-top:50px; margin-bottom:40px;"> Документ </h1>
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    Тип документа
+                                </th>
+                                <th>
+                                    Удостоверение
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    Номер документа
+                                </th>
+                                <th>
+                                    36993300019942
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    Кем выдано
+                                </th>
+                                <th>
+                                    МВД РК
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Дата выдачи
+                                </th>
+                                <th>
+                                    18.10.1996
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Срок действия
+                                </th>
+                                <th>
+                                    19.11.2016
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default" style="border-style:groove; border-width: 3px; width: 78%; margin-top:20px;">
+            <div class="panel-heading" style="height:40px; width:100%; top:30px; font-size: 20px; padding-top:7px; padding-left: 15px;">
+                <i class="glyphicon glyphicon-time"></i>
+                События
+            </div>
+            <div class="panel-body">
+                <table class="table table-bordered table-hover" style="margin-top:40px;">
+                    <thead style="background-color:#333; color:#9d9d9d;">
+                        <tr>
+                            <th style="text-align:center;">#</th>
+                            <th style="text-align:center;">ФИО</th>
+                            <th style="text-align:center;">СОПРОВОЖДАЮЩИЙ</th>
+                            <th style="text-align:center;">ПРОПУСК</th>
+                            <th style="text-align:center;">ДЕЙСТВИЯ</th>
+                        </tr>
+                    </thead>
                     <tbody>
                         <tr>
-                            <th rowspan="11" style="padding:0; width: 100px;">
-                                <div class="col-lg-6">
-                                    <img style="height:240px;" src="~/images/fotografiya-9-na-122.jpg" />
+                            <td>1</td>
+                            <td>
+                                <div style="width:300px; padding-left:5px; height:50px;">
+                                    <span class="badge" style="float:left; background-color:limegreen;">14:09:33</span>
+                                    <abbr style="padding-left:5px;">Пупкин Василий Сергеевич</abbr>
                                 </div>
-                            </th>
-                            <th colspan="2">
-                                <h1>Пупкин Василий Сергеевич</h1>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                Дата рождения
-                            </th>
-                            <th>
-                                12.10.1984
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                Национальность
-                            </th>
-                            <th>
-                                Русский
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                Пол
-                            </th>
-                            <th>
-                                Мужской
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                Место рождения
-                            </th>
-                            <th>
-                                Казахстан, Алматы
-                            </th>
-                        </tr>
-
-                        <tr>
-                            <th colspan="2">
-                                <h1 style="margin-top:50px; margin-bottom:40px;"> Документ </h1>
-                            </th>
-                        </tr>
-
-                        <tr>
-                            <th>
-                                Тип документа
-                            </th>
-                            <th>
-                                Удостоверение
-                            </th>
-                        </tr>
-
-                        <tr>
-                            <th>
-                                Номер документа
-                            </th>
-                            <th>
-                                36993300019942
-                            </th>
-                        </tr>
-
-                        <tr>
-                            <th>
-                                Кем выдано
-                            </th>
-                            <th>
-                                МВД РК
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                Дата выдачи
-                            </th>
-                            <th>
-                                18.10.1996
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                Срок действия
-                            </th>
-                            <th>
-                                19.11.2016
-                            </th>
+                            </td>
+                            <td>Нурмухамед Азиз</td>
+                            <td><img style="height:17px; margin-right: 3px;" src="~/images/glyphicons_044_keys.png" />Нурмухамед Азиз</td>
+                            <td>
+                                <a style="color:#333;" asp-controller="CheckPoint" asp-action="SelectKPP">
+                                    <button class="btn">Просмотр</button>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-        </div>
-
-        <div style="border-style:groove; border-width: 3px; width: 78%; margin-top:20px;">
-            <div style="background:linear-gradient(to top,#c8b9b9,#efd7d7); height:40px; width:100%; top:30px; font-size: 20px; padding-top:7px; padding-left: 15px;">
-                <i class="glyphicon glyphicon-time"></i>
-                События
-            </div>
-
-            <table class="table table-bordered table-hover" style="margin-top:40px;">
-                <thead style="background-color:#333; color:#9d9d9d;">
-                    <tr>
-                        <th style="text-align:center;">#</th>
-                        <th style="text-align:center;">ФИО</th>
-                        <th style="text-align:center;">СОПРОВОЖДАЮЩИЙ</th>
-                        <th style="text-align:center;">ПРОПУСК</th>
-                        <th style="text-align:center;">ДЕЙСТВИЯ</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>
-                            <div style="width:300px; padding-left:5px; height:50px;">
-                                <span class="badge" style="float:left; background-color:limegreen;">14:09:33</span>
-                                <abbr style="padding-left:5px;">Пупкин Василий Сергеевич</abbr>
-                            </div>
-                        </td>
-                        <td>Нурмухамед Азиз</td>
-                        <td><img style="height:17px; margin-right: 3px;" src="~/images/glyphicons_044_keys.png" />Нурмухамед Азиз</td>
-                        <td>
-                            <a style="color:#333;" asp-controller="CheckPoint" asp-action="SelectKPP">
-                                <button class="btn">Просмотр</button>
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
     </div>
 </div>

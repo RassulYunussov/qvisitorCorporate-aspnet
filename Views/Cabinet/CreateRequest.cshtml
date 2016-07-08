@@ -36,9 +36,7 @@
   left: 0;
   width: 100%;
   height: 1000px;
-  background-color:black;
-  background-image:url(/images/fon_tech.png);
-  background-repeat:round;">
+  background-color:white;">
 
     <div style="position:fixed;
   top: 100px;
@@ -46,7 +44,6 @@
   width: 100%;
   height: 90%;
   background-color:white;
-  padding:30px;
   overflow: scroll;">
 
         <h1 style="padding-left:30px;" class="page-header"> Создать заявку </h1>
@@ -59,47 +56,48 @@
             </li>
         </ol>
 
-        <div style="border-style:groove; border-width: 3px; width: 78%; margin-top:20px;">
-            <div style="background:linear-gradient(to top,#c8b9b9,#efd7d7); height:40px; width:100%; top:30px; font-size: 20px; padding-top:7px; padding-left: 15px;">
+        <div class="panel panel-default" style="border-style:groove; border-width: 3px; width: 78%; margin-top:20px;">
+            <div class="panel-heading" style="height:40px; width:100%; top:30px; font-size: 20px; padding-top:7px; padding-left: 15px;">
                 <i class="glyphicon glyphicon-floppy-save"></i>
                 Создать заявку
             </div>
-            <form style="margin-top:20px; margin-left:20px;">
-                <label>
-                    <h4>Номер</h4>
-                </label>
-                <input type="text" class="form-control" required disabled value="ORD_0093884778_99900234"/>
-                <p class="help-block">Обязательное поле</p>
-                <label>
-                    <h4>Дата выдачи</h4>
-                </label>
-                <input type="date" class="form-control" required />
-                <p class="help-block">Обязательное поле</p>
-                <label>
-                    <h4>Время с</h4>
-                </label>
-                <input type="date" maxlength="12" class="form-control" required />
-                <p class="help-block">Обязательное поле</p>
-                <label>
-                    <h4>Срок действия </h4>
-                </label>
-                <input class="form-control" type="date" />
-                <label>
-                    <h4>Время по</h4>
-                </label>
-                <input class="form-control" type="date" required />
-                <p class="help-block">Обязательное поле</p>
-                <label>
-                    <h4>Посетители</h4>
-                </label>
-                <input class="form-control" type="text" required/>
-                <p class="help-block">Обязательное поле</p>
-                <div style="margin-top:20px; margin-bottom:20px; position:relative; ">
-                    <button type="submit" style="100px;" class="btn btn-primary">Сохранить</button>
-                    <a asp-controller="Cabinet" asp-action="Request"><button type="button" class="btn" style="width:90px;"> Отмена</button></a>
-                </div>
-
-            </form>
+            <div class="panel-body">
+                <form style="margin-top:20px; margin-left:20px;">
+                    <label>
+                        <h4>Номер</h4>
+                    </label>
+                    <input type="text" class="form-control" required disabled value="ORD_0093884778_99900234" />
+                    <p class="help-block">Обязательное поле</p>
+                    <label>
+                        <h4>Дата выдачи</h4>
+                    </label>
+                    <input type="date" class="form-control" required />
+                    <p class="help-block">Обязательное поле</p>
+                    <label>
+                        <h4>Время с</h4>
+                    </label>
+                    <input type="date" maxlength="12" class="form-control" required />
+                    <p class="help-block">Обязательное поле</p>
+                    <label>
+                        <h4>Срок действия </h4>
+                    </label>
+                    <input class="form-control" type="date" />
+                    <label>
+                        <h4>Время по</h4>
+                    </label>
+                    <input class="form-control" type="date" required />
+                    <p class="help-block">Обязательное поле</p>
+                    <label>
+                        <h4>Посетители</h4>
+                    </label>
+                    <input class="form-control" type="text" required />
+                    <p class="help-block">Обязательное поле</p>
+                    <div style="margin-top:20px; margin-bottom:20px; position:relative; ">
+                        <button type="submit" style="100px;" class="btn btn-primary">Сохранить</button>
+                        <a asp-controller="Cabinet" asp-action="Request"><button type="button" class="btn" style="width:90px;"> Отмена</button></a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
