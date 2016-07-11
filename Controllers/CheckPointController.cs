@@ -8,16 +8,17 @@ namespace qvisitorCorp.Controllers
 {
     public class CheckPointController : Controller
     {
+        
         public IActionResult Cabinet()
         {
             return View();
         }
-
+        [Route("checkpoint")]
         public IActionResult KPP()
         {
             return View();
         }
-
+        [Route("checkpoint/hotentrance")]
         public IActionResult CreateKPP()
         {
             return View();
@@ -27,11 +28,12 @@ namespace qvisitorCorp.Controllers
         {
             return View();
         }
-
+        [Route("checkpoint/entrance")]
         public IActionResult Visitors()
         {
             return View();
         }
+        [Route("checkpoint/entrance/new")]
         public IActionResult CreateVisitors()
         {
             return View();

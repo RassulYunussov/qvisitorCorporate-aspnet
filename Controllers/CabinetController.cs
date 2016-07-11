@@ -8,6 +8,11 @@ namespace qvisitorCorp.Controllers
 {
     public class CabinetController : Controller
     {
+        public IActionResult TableOfVisitors()
+        {
+            return View();
+        }
+
         public IActionResult Request()
         {
             return View();

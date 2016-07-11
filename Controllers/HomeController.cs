@@ -13,7 +13,7 @@ namespace qvisitorCorp.Controllers
         {
             return View();
         }
-
+        [Route("statistics")]
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
