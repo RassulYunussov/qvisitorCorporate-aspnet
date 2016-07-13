@@ -12,27 +12,26 @@ namespace qvisitorCorp.Controllers
         {
             return View();
         }
-
+        [Route("/cabinet/order")]
         public IActionResult Request()
         {
             return View();
         }
-
+        [Route("/cabinet/order/new")]
         public IActionResult CreateRequest()
         {
             return View();
         }
-
+        [Route("/cabinet/order/1/show")]
         public IActionResult SelectRequest()
         {
             return View();
         }
-
+        [Route("/cabinet/order/1/edit")]
         public IActionResult UpdateRequest()
         {
             return View();
         }
-
         public IActionResult Cabinet()
         {
             return View();
