@@ -30,7 +30,7 @@ namespace qvisitorCorp.Controllers
         {
             return View();
         }
- public IActionResult add_user()
+        public IActionResult add_user()
         {
             return View();
         }
@@ -72,11 +72,11 @@ namespace qvisitorCorp.Controllers
         {
             return View();
         }
-public IActionResult update_country()
+        public IActionResult update_country()
         {
             return View();
         }
-public IActionResult update_filiation()
+        public IActionResult update_filiation()
         {
            
             return View();
@@ -86,7 +86,7 @@ public IActionResult update_filiation()
         {
             return View();
         }
-public IActionResult users()
+        public IActionResult users()
         {
             return View();
         }

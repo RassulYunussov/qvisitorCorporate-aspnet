@@ -57,7 +57,21 @@
                     <label>
                         Посетители
                     </label>
-                    <input id="push_here" class="form-control" type="text" required onclick="ReturnVisitors()" />
+                    <div id="push_here" class="form-control" type="text" required ></div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <table class="table table-striped table-bordered table-hover dataTable no-footer">
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn" onclick="ReturnVisitors()">Добавить</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn" onclick="DeleteVisitors()">Удалить</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
                 <p class="help-block">Обязательное поле</p>
                 <div>
@@ -75,6 +89,9 @@
         newWin = window.open('/Cabinet/TableOfVisitors', 'TableOfVisitors', 'width=600px,height=400px');
         var StringDiv = newWin.document.createElement('div');
         alert(newWin.location.href); // (*) about:blank, загрузка ещё не началась
+    }
+    function DeleteVisitors() {
+        document.getElementById('push_here').innerHTML = '';
     }
 </script>
 

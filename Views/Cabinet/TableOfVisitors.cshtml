@@ -11,7 +11,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <i class="glyphicon glyphicon-list-alt"></i>
-                    Список пропусков
+                    Список посетителей
                 </div>
                 <div class="panel-body">
                     <div class="dataTable_wrapper">
@@ -56,6 +56,9 @@
 
         <div class="well">
             <button type="button" class="btn" onclick="GetVisitors()">Заполнить</button>
+            <a asp-controller="CheckPoint" asp-action="CreateVisitors" style="color:#333">
+                <button type="button" class="btn" onclick="GetVisitors()">Добавить посетителя</button>
+            </a>
         </div>
 
     </div>
@@ -70,7 +73,7 @@
             if (input.checked)
                 str += document.getElementById('dataTables-example').rows[i+1].cells[1].innerText + ' ';
         }
-        window.opener.document.getElementById('push_here').value = str;
+        window.opener.document.getElementById('push_here').innerHTML = str;
         window.close();
     }
 </script>
