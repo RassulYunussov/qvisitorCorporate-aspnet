@@ -44,6 +44,26 @@ namespace qvisitorCorp.Controllers
             return View();
         }
 
+        [Route("[controller]/orders/[action]/{id}")]
+        public async Task<IActionResult> Edit(int? id)
+        {
+            /*if (id == null)
+            {
+                return NotFound();
+            }
+
+            var qvOrder = await _context.Orders.SingleOrDefaultAsync(m => m.Id == id);
+            if (qvOrder == null)
+            {
+                return NotFound();
+            }
+            ViewData["OrderStausid"] = new SelectList(_context.OrderStatuses, "Id", "OrderStatus", qvOrder.OrderStausid);
+            ViewData["OrderTypeid"] = new SelectList(_context.OrderTypes, "Id", "OrderType", qvOrder.OrderTypeid);
+            return View(qvOrder);*/
+            return View();
+        }
+
+
         public IActionResult TableOfVisitors()
         {
             return View();
@@ -58,6 +78,7 @@ namespace qvisitorCorp.Controllers
         {
             return View();
         }
+
         [Route("/cabinet/order/1/show")]
         public IActionResult SelectRequest()
         {
