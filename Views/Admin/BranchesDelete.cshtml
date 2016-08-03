@@ -1,0 +1,55 @@
+﻿@model qvisitorCorp.Models.qvBranch
+
+@{
+    ViewData["Title"] = "BranchesDelete";
+}
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Удалить филиал</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <ol class="breadcrumb">
+        <li>
+            <a asp-controller="Admin" asp-action="Branches"> Компания</a>
+        </li>
+        <li class="active">
+            Удалить филиал
+        </li>
+    </ol>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Удалить филиал
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+
+                            <h3>Вы действительно хотите это удалить?</h3>
+                            <div>
+                                <dl>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.Name)
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Name)
+                                    </dd>
+                                </dl>
+
+                                <form asp-action="BranchesDelete">
+                                    <div class="form-actions no-color">
+                                        <input type="submit" value="Delete" class="btn" /> 
+                                        <a asp-controller="Admin" asp-action="Branches"><button type="button" class="btn" style="color:#333"> Отмена</button></a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

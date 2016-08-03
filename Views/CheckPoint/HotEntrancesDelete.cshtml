@@ -1,0 +1,109 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model qvisitorCorp.Models.qvHotEntrance
+@{
+
+    ViewData["Title"] = "CreateKPP";
+}
+
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Регистрация пропуска</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <ol class="breadcrumb">
+        <li>
+            <a asp-controller="CheckPoint" asp-action="HotEntrances">КПП</a>
+        </li>
+        <li class="active">
+            Удалить пропуск
+        </li>
+    </ol>
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>Вы действительно хотите удалить это?</h3>
+            <div>
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Attendant)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Attendant)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Comment)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Comment)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DocumentNumber)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DocumentNumber)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Organization)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Organization)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Patronymic)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Patronymic)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Surname)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Surname)
+                    </dd>
+                </dl>
+
+                <form asp-action="Delete">
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Удалить" class="btn" />
+                        <a style="color:#333;" asp-controller="CheckPoint" asp-action="HotEntrances"><button type="button" class="btn"> Отмена</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="~/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="~/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+<!-- DataTables JavaScript -->
+<script src="~/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="~/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="~/js/sb-admin-2.js"></script>
+
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+<script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+                responsive: true
+        });
+    });
+</script>

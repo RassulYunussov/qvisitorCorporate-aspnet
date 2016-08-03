@@ -7,22 +7,22 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using qvisitorCorp.Data;
 using qvisitorCorp.Models;
-using qvisitorCorp.Repositories;
 
-namespace qvisitorCorp.Controllers
+namespace qvisitorCorporateaspnet.Controllers
 {
     public class qvCountriesController : Controller
     {
-        private readonly CountryRepository _countryRepository;
-        public qvCountriesController(ApplicationDbContext context,CountryRepository countryRepository)
-        {  
-            _countryRepository = countryRepository;
+        private readonly ApplicationDbContext _context;
+
+        public qvCountriesController(ApplicationDbContext context)
+        {
+            _context = context;    
         }
 
         // GET: qvCountries
         public async Task<IActionResult> Index()
         {
-            return View(await _countryRepository.GetAll().ToListAsync());
+            return View(await _context.Countries.ToListAsync());
         }
 
         // GET: qvCountries/Details/5
@@ -32,9 +32,8 @@ namespace qvisitorCorp.Controllers
             {
                 return NotFound();
             }
-            var qvCountry =await Task<qvCountry>.Run(()=> { return _countryRepository.FindSingle(c=>c.Id == id);});
-            
-          //  var qvCountry = await _context.Countries.SingleOrDefaultAsync(m => m.Id == id);
+
+            var qvCountry = await _context.Countries.SingleOrDefaultAsync(m => m.Id == id);
             if (qvCountry == null)
             {
                 return NotFound();
@@ -58,7 +57,8 @@ namespace qvisitorCorp.Controllers
         {
             if (ModelState.IsValid)
             {
-                await Task.Run(()=>{_countryRepository.Add(qvCountry);});
+                _context.Add(qvCountry);
+                await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             return View(qvCountry);
@@ -72,7 +72,7 @@ namespace qvisitorCorp.Controllers
                 return NotFound();
             }
 
-            var qvCountry =await Task<qvCountry>.Run(()=> { return _countryRepository.FindSingle(c=>c.Id == id);});
+            var qvCountry = await _context.Countries.SingleOrDefaultAsync(m => m.Id == id);
             if (qvCountry == null)
             {
                 return NotFound();
@@ -96,12 +96,12 @@ namespace qvisitorCorp.Controllers
             {
                 try
                 {
-                    _countryRepository.Edit(qvCountry);
-                    await Task.Run(()=>{_countryRepository.Save();});
+                    _context.Update(qvCountry);
+                    await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!_countryRepository.Any(c=>c.Id==qvCountry.Id))
+                    if (!qvCountryExists(qvCountry.Id))
                     {
                         return NotFound();
                     }
@@ -123,7 +123,7 @@ namespace qvisitorCorp.Controllers
                 return NotFound();
             }
 
-            var qvCountry =await Task<qvCountry>.Run(()=> { return _countryRepository.FindSingle(c=>c.Id == id);});
+            var qvCountry = await _context.Countries.SingleOrDefaultAsync(m => m.Id == id);
             if (qvCountry == null)
             {
                 return NotFound();
@@ -137,10 +137,15 @@ namespace qvisitorCorp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var qvCountry =await Task<qvCountry>.Run(()=> { return _countryRepository.FindSingle(c=>c.Id == id);});
-            _countryRepository.Delete(qvCountry);
-            await Task.Run(()=>{_countryRepository.Save();});
+            var qvCountry = await _context.Countries.SingleOrDefaultAsync(m => m.Id == id);
+            _context.Countries.Remove(qvCountry);
+            await _context.SaveChangesAsync();
             return RedirectToAction("Index");
+        }
+
+        private bool qvCountryExists(int id)
+        {
+            return _context.Countries.Any(e => e.Id == id);
         }
     }
 }
