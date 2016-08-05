@@ -1,23 +1,22 @@
-﻿@model qvisitorCorp.Models.qvCompany
+﻿@model qvisitorCorp.Models.qvCity
 
 @{
     ViewData["Title"] = "Delete";
-    Layout = "_mockupLayout";
 }
 
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Удалить компанию</h1>
+            <h1 class="page-header">Удалить город</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
     <ol class="breadcrumb">
         <li>
-            <a asp-controller="mockup" asp-action="Companies"> Компании</a>
+            <a asp-controller="Admin" asp-action="Cities"> Города</a>
         </li>
         <li class="active">
-            Удалить компанию
+            Удалить город
         </li>
     </ol>
     <!-- /.row -->
@@ -26,11 +25,10 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <i class="glyphicon glyphicon-list-alt"></i>
-                    Удалить компанию
+                    Удалить город
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
-                    
                     <h3>Вы действительно хотите удалить это?</h3>
                     <div>
                         <dl class="dl-horizontal">
@@ -42,16 +40,15 @@
                             </dd>
                         </dl>
 
-                        <form asp-action="СompaniesDelete">
+                        <form asp-action="CitiesDelete">
                             <div class="form-actions no-color">
                                 <input type="submit" value="Удалить" class="btn" />
-                                <a style="color:#333;" asp-controller="mockup" asp-action="Companies">
+                                <a style="color:#333;" asp-controller="Admin" asp-action="Cities">
                                     <button type="button" class="btn">Отменить</button>
                                 </a>
                             </div>
                         </form>
                     </div>
-
                 </div>
                 <!-- /.panel-body -->
             </div>
@@ -63,21 +60,9 @@
     <!-- /.row -->
 
 </div>
-<!-- /.col-lg-6 -->
-<!-- jQuery -->
-<script src="~/bower_components/jquery/dist/jquery.min.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="~/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- Metis Menu Plugin JavaScript -->
-<script src="~/bower_components/metisMenu/dist/metisMenu.min.js"></script>
-
-<!-- DataTables JavaScript -->
-<script src="~/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-<script src="~/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="~/js/sb-admin-2.js"></script>
+@*@section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }*@
 
 

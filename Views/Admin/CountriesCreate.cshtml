@@ -2,7 +2,6 @@
 
 @{
     ViewData["Title"] = "Create";
-    Layout = "_mockupLayout";
 }
 
 
@@ -15,7 +14,7 @@
     </div>
     <ol class="breadcrumb">
         <li>
-            <a asp-controller="mockup" asp-action="Countries"> Страны</a>
+            <a asp-controller="Admin" asp-action="Countries"> Страны</a>
         </li>
         <li class="active">
             Добавить страну
@@ -44,7 +43,7 @@
                             <div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
                                     <input type="submit" value="Создать" class="btn" />
-                                    <a style="color:#333;" asp-controller="mockup" asp-action="Countries">
+                                    <a style="color:#333;" asp-controller="Admin" asp-action="Countries">
                                         <button type="button" class="btn">Отменить</button>
                                     </a>
                                 </div>

@@ -1,26 +1,22 @@
-﻿@model qvisitorCorp.Models.qvObject
+﻿@model qvisitorCorp.Models.qvCountry
 
 @{
     ViewData["Title"] = "Delete";
-    Layout = "_mockupLayout";
 }
 
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Удалить объект</h1>
+            <h1 class="page-header">Удалить страну</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
     <ol class="breadcrumb">
         <li>
-            <a asp-controller="mockup" asp-action="Companies"> Компании</a>
-        </li>
-        <li>
-            <a asp-controller="mockup" asp-action="Objects"> Объекты</a>
+            <a asp-controller="Admin" asp-action="Countries"> Страны</a>
         </li>
         <li class="active">
-            Удалить объект
+            Удалить страну
         </li>
     </ol>
     <!-- /.row -->
@@ -29,7 +25,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <i class="glyphicon glyphicon-list-alt"></i>
-                    Удалить объект
+                    Удалить страну
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -44,10 +40,10 @@
                             </dd>
                         </dl>
 
-                        <form asp-action="Delete">
+                        <form asp-action="CountriesDelete">
                             <div class="form-actions no-color">
                                 <input type="submit" value="Удалить" class="btn" />
-                                <a style="color:#333;" asp-controller="mockup" asp-action="Objects">
+                                <a style="color:#333;" asp-controller="Admin" asp-action="Countries">
                                     <button type="button" class="btn">Отменить</button>
                                 </a>
                             </div>
@@ -91,9 +87,5 @@
     });
 </script>
 
-@*
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }*@
 
 

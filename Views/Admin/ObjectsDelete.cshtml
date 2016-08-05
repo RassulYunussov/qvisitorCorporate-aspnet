@@ -1,23 +1,24 @@
-﻿@model qvisitorCorp.Models.qvCountry
+﻿@model qvisitorCorp.Models.qvObject
 
 @{
     ViewData["Title"] = "Delete";
-    Layout = "_mockupLayout";
-}
 
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Удалить страну</h1>
+            <h1 class="page-header">Удалить объект</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
     <ol class="breadcrumb">
         <li>
-            <a asp-controller="mockup" asp-action="Countries"> Страны</a>
+            <a asp-controller="Admin" asp-action="Companies"> Компании</a>
+        </li>
+        <li>
+            <a asp-controller="Admin" asp-action="Objects"> Объекты</a>
         </li>
         <li class="active">
-            Удалить страну
+            Удалить объект
         </li>
     </ol>
     <!-- /.row -->
@@ -26,11 +27,11 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <i class="glyphicon glyphicon-list-alt"></i>
-                    Удалить страну
+                    Удалить объект
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
-                    <h3>Вы действительно хотите удалить это</h3>
+                    <h3>Вы действительно хотите удалить это?</h3>
                     <div>
                         <dl class="dl-horizontal">
                             <dt>
@@ -41,10 +42,10 @@
                             </dd>
                         </dl>
 
-                        <form asp-action="CountriesDelete">
+                        <form asp-action="ObjectsDelete">
                             <div class="form-actions no-color">
                                 <input type="submit" value="Удалить" class="btn" />
-                                <a style="color:#333;" asp-controller="mockup" asp-action="Countries">
+                                <a style="color:#333;" asp-controller="Admin" asp-action="Objects">
                                     <button type="button" class="btn">Отменить</button>
                                 </a>
                             </div>
@@ -88,5 +89,9 @@
     });
 </script>
 
+@*
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }*@
 
 
