@@ -1,26 +1,22 @@
-﻿@model qvisitorCorp.Models.qvObject
+﻿@model qvisitorCorp.Models.qvCompany
 
 @{
-    ViewData["Title"] = "Edit";
-    Layout = "_mockupLayout";
+    ViewData["Title"] = "Create";
 }
 
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Удалить объект</h1>
+            <h1 class="page-header">Создать компанию</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
     <ol class="breadcrumb">
         <li>
-            <a asp-controller="mockup" asp-action="Companies"> Компании</a>
-        </li>
-        <li>
-            <a asp-controller="mockup" asp-action="Objects"> Объекты</a>
+            <a asp-controller="Admin" asp-action="Companies"> Компании</a>
         </li>
         <li class="active">
-            Удалить объект
+            Добавить компанию
         </li>
     </ol>
     <!-- /.row -->
@@ -29,19 +25,17 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <i class="glyphicon glyphicon-list-alt"></i>
-                    Удалить объект
+                    Добавить компанию
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
-                    <form asp-action="ObjectsEdit">
+                    <form asp-action="CompaniesCreate">
                         <div class="form-horizontal">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            <input type="hidden" asp-for="Id" />
                             <div class="form-group">
-                                <label asp-for="CityId" class="control-label col-md-2"></label>
+                                <label asp-for="CounryId" class="col-md-2 control-label"></label>
                                 <div class="col-md-10">
-                                    <select asp-for="CityId" class="form-control" asp-items="ViewBag.CityId"></select>
-                                    <span asp-validation-for="CityId" class="text-danger" />
+                                    <select asp-for="CounryId" class="form-control" asp-items="ViewBag.CounryId"></select>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -53,8 +47,8 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
-                                    <input type="submit" value="Сохранить" class="btn" />
-                                    <a style="color:#333;" asp-controller="mockup" asp-action="Objects">
+                                    <input type="submit" value="Создать" class="btn" />
+                                    <a style="color:#333;" asp-controller="Admin" asp-action="Companies">
                                         <button type="button" class="btn">Отменить</button>
                                     </a>
                                 </div>
@@ -62,6 +56,7 @@
                         </div>
                     </form>
 
+                    
                 </div>
                 <!-- /.panel-body -->
             </div>
@@ -89,19 +84,3 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="~/js/sb-admin-2.js"></script>
-
-<!-- Page-Level Demo Scripts - Tables - Use for reference -->
-<script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-                responsive: true
-        });
-    });
-</script>
-
-@*
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }*@
-
-

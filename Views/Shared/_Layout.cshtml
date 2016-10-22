@@ -282,22 +282,28 @@
                             <!-- /input-group -->
                         </li>
                         <li>
+                            <a asp-controller="Admin" asp-action="Countries"><i class="fa fa-table fa-fw"></i> Страны</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Admin" asp-action="Companies"><i class="fa fa-table fa-fw"></i> Компании</a>
+                        </li>
+                        <li>
                             <a asp-controller="Admin" asp-action="Branches"> <i class="fa fa-table fa-fw"></i> Компания </a>
                         </li>
                         <li>
-                            <a asp-controller="Admin" asp-action="Cabinet"> <i class="fa fa-table fa-fw"></i>Кабинет</a>
+                            <a asp-controller="Admin" asp-action="Cabinet"> <i class="fa fa-table fa-fw"></i> Кабинет</a>
                         </li>
                         <li>
-                            <a asp-controller="CheckPoint" asp-action="Entrances"> <i class="fa fa-table fa-fw"></i>Посетители</a>
+                            <a asp-controller="CheckPoint" asp-action="Entrances"> <i class="fa fa-table fa-fw"></i> Посетители</a>
                         </li>
                         <li>
-                            <a asp-controller="Cabinet" asp-action="Orders"> <i class="fa fa-table fa-fw"></i>Заявки</a>
+                            <a asp-controller="Cabinet" asp-action="Orders"> <i class="fa fa-table fa-fw"></i> Заявки</a>
                         </li>
                         <li>
-                            <a asp-controller="CheckPoint" asp-action="HotEntrances"> <i class="fa fa-table fa-fw"></i>КПП</a>
+                            <a asp-controller="CheckPoint" asp-action="HotEntrances"> <i class="fa fa-table fa-fw"></i> КПП</a>
                         </li>
                         <li>
-                            <a asp-controller="Home" asp-action="About"> <i class="fa fa-table fa-fw"></i>Статистика</a>
+                            <a asp-controller="Home" asp-action="About"> <i class="fa fa-table fa-fw"></i> Статистика</a>
                         </li>
                     </ul>
                 </div>
@@ -311,6 +317,25 @@
 
 
         @RenderBody()
+
+        <environment names="Development">
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>
+        </environment>
+        <environment names="Staging,Production">
+            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.3.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery">
+            </script>
+            <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+            </script>
+            <script src="~/js/site.min.js" asp-append-version="true"></script>
+        </environment>
+
+        @RenderSection("scripts", required: false)
 
 </body>
 </html>
